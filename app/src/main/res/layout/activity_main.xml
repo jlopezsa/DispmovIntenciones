@@ -34,5 +34,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tomar Foto" />
+
+        <Button
+            android:id="@+id/btn_correo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enviar correo" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

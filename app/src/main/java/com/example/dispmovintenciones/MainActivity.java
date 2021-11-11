@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Button boton_llamada;
     private Button boton_mapa;
     private Button boton_foto;
+    private Button boton_correo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         boton_llamada = (Button) findViewById(R.id.btn_llamada);
         boton_mapa = (Button) findViewById(R.id.btn_maps);
         boton_foto = findViewById(R.id.btn_foto);
+        boton_correo = findViewById(R.id.btn_correo);
 
         boton_pagina.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +62,13 @@ public class MainActivity extends AppCompatActivity {
                 tomarFoto(null);
             }
         });
+
+        boton_correo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                enviarCorreo(null);
+            }
+        });
     }
 
     public void paginaWeb(View view){
@@ -85,6 +94,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void tomarFoto(View view){
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivity(intent);
+    }
+
+    private void enviarCorreo(View view){
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_SUBJECT,"asunto");
+        intent.putExtra(Intent.EXTRA_TEXT,"texto  del correo");
+        intent.putExtra(Intent.EXTRA_EMAIL,new String[]{"xyz_123@gmail.com"});
         startActivity(intent);
     }
 }
