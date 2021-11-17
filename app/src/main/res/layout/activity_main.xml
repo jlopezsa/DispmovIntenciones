@@ -40,5 +40,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Enviar correo" />
+
+        <Button
+            android:id="@+id/btn_whatsapp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enviar mensaje Whatsapp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
